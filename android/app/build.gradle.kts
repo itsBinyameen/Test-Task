@@ -8,8 +8,7 @@ plugins {
 android {
     namespace = "com.example.test_task"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = "27.0.12077973" // <-- Add this line
-
+    ndkVersion = flutter.ndkVersion
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11

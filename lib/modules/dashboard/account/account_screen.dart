@@ -9,7 +9,7 @@ class AccountScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 8),
+        padding: const EdgeInsets.only(top: 16,left: 16,right: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -15,7 +15,7 @@ class CategoriesScreen extends GetView<CategoriesController> {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(12.0),
+        padding: const EdgeInsets.only(top: 16,left: 16,right: 16),
         child: Obx(() {
           return Column(
             crossAxisAlignment: CrossAxisAlignment.start,
