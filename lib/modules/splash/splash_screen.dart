@@ -14,7 +14,7 @@ class SplashScreen extends GetView<SplashController> {
         AppAssets.splash,
         height: Get.height,
         width: Get.width,
-        fit: BoxFit.contain,
+        fit: BoxFit.cover,
       ),
 
     );
