@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/core/theme/text_theme.dart';
 import 'package:test_task/global_widgets/product_card_widget.dart';
+import 'package:test_task/global_widgets/shimmer_widget.dart';
 import 'package:test_task/global_widgets/text_field_widget.dart';
 import 'package:test_task/modules/dashboard/categories/categories_controller.dart';
 import 'package:test_task/modules/dashboard/products/product_details_screen.dart';
@@ -27,7 +28,9 @@ class CategoryProductsScreen extends StatelessWidget {
       body: SafeArea(
         child: Obx(() {
           if (controller.isLoading.value) {
-            return const Center(child: CircularProgressIndicator());
+            return Column(
+              children: List.generate(3, (_) => const ShimmerProductCard()),
+            );
           }
 
           final products = controller.filteredCategoryProducts;

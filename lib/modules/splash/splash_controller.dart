@@ -1,4 +1,5 @@
 
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/routes/routes.dart';
 
@@ -8,7 +9,9 @@ class SplashController extends GetxController{
   void onInit() async {
     // TODO: implement onInit
     super.onInit();
-    await navigateToNextScreen();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      navigateToNextScreen();
+    });
   }
 
   Future<void> navigateToNextScreen()async{

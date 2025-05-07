@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/global_widgets/product_card_widget.dart';
+import 'package:test_task/global_widgets/shimmer_widget.dart';
 import 'package:test_task/global_widgets/text_field_widget.dart';
 import 'package:test_task/modules/dashboard/products/product_details_screen.dart';
 import 'package:test_task/modules/dashboard/products/products_controller.dart';
@@ -10,7 +11,6 @@ class ProductsScreen extends GetView<ProductsController> {
 
   @override
   Widget build(BuildContext context) {
-    final TextEditingController searchController = TextEditingController();
 
     return Scaffold(
       body: SafeArea(
@@ -24,7 +24,7 @@ class ProductsScreen extends GetView<ProductsController> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     TextFieldWidget(
-                      textEditingController: searchController,
+                      textEditingController: controller.searchController,
                       onchange: controller.onSearchChanged,
                     ),
                     const SizedBox(height: 10),
@@ -69,9 +69,8 @@ class ProductsScreen extends GetView<ProductsController> {
                             },
                           );
                         } else {
-                          return const Padding(
-                            padding: EdgeInsets.symmetric(vertical: 16),
-                            child: Center(child: CircularProgressIndicator()),
+                          return  Column(
+                            children: List.generate(3, (_) => const ShimmerProductCard()),
                           );
                         }
                       },

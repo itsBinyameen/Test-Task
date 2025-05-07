@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:test_task/core/api_services/products_api.dart';
 import 'package:test_task/core/utils/show.dart';
@@ -8,6 +9,10 @@ import 'package:test_task/modules/dashboard/products/product_details_screen.dart
 class ProductsController extends GetxController {
   // Repository/API service
   final ProductsApi repository = ProductsApi();
+
+  // SearchBar text field controller
+  final TextEditingController searchController = TextEditingController();
+
 
   // Reactive state variables
   final RxList<ProductModel> allProducts =

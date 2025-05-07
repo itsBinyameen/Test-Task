@@ -116,8 +116,8 @@ class ProductDetailsScreen extends GetView<ProductsController> {
                       physics: NeverScrollableScrollPhysics(),
                       itemCount: product.gallery?.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          color: Colors.white,
+                        return Container(
+                          color: Colors.grey.shade100,
                           child: MyNetworkImage(
                             image: product.gallery?[index] ?? '',
                             boxFit: BoxFit.cover,

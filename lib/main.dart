@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 import 'package:test_task/modules/splash/splash_binding.dart';
 
@@ -6,7 +7,9 @@ import 'core/theme/app_theme.dart';
 import 'routes/pages.dart';
 import 'routes/routes.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(const MyApp());
 }
 

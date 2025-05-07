@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:test_task/global_widgets/shimmer_widget.dart';
 
 class MyNetworkImage extends StatelessWidget {
   const MyNetworkImage({
@@ -23,7 +24,7 @@ class MyNetworkImage extends StatelessWidget {
       width: width,
       imageUrl: image,
       placeholder:
-          (context, url) => const Center(child: CircularProgressIndicator()),
+          (context, url) => const Center(child: ShimmerProductCard(height:170,margin: 0,)),
       errorWidget:
           (context, url, error) => Image.asset(
             'assets/icons/splash.png',
